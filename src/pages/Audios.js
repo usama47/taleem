@@ -1,24 +1,18 @@
 import React from 'react'
 import SurahListComp from '../components/SurahListComp';
 import Box from '@mui/joy/Box';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'Surah Fatiha',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: 'Surah Bakara',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
   },
 ];
 
@@ -26,16 +20,19 @@ const featuredPosts = [
 export const Audios = () => {
   return (
     <Grid container margin="20px">
-    <Box
-      component="ul"
-      sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', p: 0, m: 0 }}
-    >
-  { featuredPosts.map((post) => {
-      return (
-        <SurahListComp key={post.title} post={post}  />
-      )
-    })}
-  </Box>
-  </Grid>
+      <Typography gutterBottom variant="h5" component="div" mb={5} mt={10}>
+        Surah List:
+      </Typography>
+      <Box
+        component="ul"
+        sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', p: 0, m: 0 }}
+      >
+        {featuredPosts.map((post) => {
+          return (
+            <SurahListComp key={post.title} post={post} />
+          )
+        })}
+      </Box>
+    </Grid>
   )
 }
